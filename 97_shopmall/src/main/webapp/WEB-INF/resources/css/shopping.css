@@ -6,7 +6,7 @@ body{
 }
 
 #wrap{
-    width:971px; /* 媛� �쎒 �럹�씠吏� �겕湲곗뿉 留욊쾶 �궗�씠利� 議곗젙 */
+    width:971px;  /* �� �� ������ ũ�⿡ �°� ������ ���� */
     text-align:left;
     margin:0;
     margin-right:auto;
@@ -32,10 +32,10 @@ nav#catagory_menu{
 }
 
 table#cartList {
-    border-collapse:collapse;    /* border �궗�씠�쓽 媛꾧꺽 �뾾�빊 */
+    border-collapse:collapse;    /* border ������ ���� ���� */
     border-top: 2px solid  #333;    
     border-bottom: 1px solid  #333; 
-    width:100%;                  /* �쟾泥� �뀒�씠釉� 湲몄씠 �꽕�젙 */
+    width:100%;                  /* ��ü ���̺� ���� ���� */
     margin-bottom: 20px;
 }
 
@@ -52,7 +52,7 @@ nav#catagory_menu ul li{
 	display:block; 
     height:30px;
     float:left;
-    font-family: 援대┝;
+    font-family: 굴림;
 }
 
 nav#catagory_menu a{
@@ -111,7 +111,7 @@ article h2, div h2{
 	font-size: 30px; 
 	color: #CCC;
 	padding-bottom: 15px;
-	border-bottom: 1px dotted #666; /* �젣紐� �븯�떒 遺��뿉 �젏�꽑�쓣 �꽔�뼱 �젣紐⑹씠�씪�뒗 寃껋쓣 �몴�떆�빐 以띾땲�떎. */	
+	border-bottom: 1px dotted #666; /* ���� �ϴ� �ο� ������ �־� �����̶�� ���� ǥ���� �ݴϴ�. */	
 }
 
 
@@ -285,23 +285,23 @@ form fieldset {
 }
 
 form fieldset legend {
-	font-size: 20px; /* �젣紐⑹쑝濡� �궗�슜�릺湲� �븣臾몄뿉 �겕湲곕�� �겕寃� �옟�븘 以띾땲�떎. */
-	border-bottom: 1px dotted #666; /* �젣紐� �븯�떒 遺��뿉 �젏�꽑�쓣 �꽔�뼱 �젣紐⑹씠�씪�뒗 寃껋쓣 �몴�떆�빐 以띾땲�떎. */
-	width: 600px; /* �쟾泥� �겕湲곕�� �옟�븘 以띾땲�떎. */
-	padding: 5px 0; /* �쐞�� �븘�옒濡� �뿬諛깆쓣 二쇨퀬 醫뚯슦濡쒕뒗 �뿬諛깆쓣 �뾾�븷踰꾨┰�땲�떎. 
-                                      �뿬諛깆쓣 �븞 二쇨쾶 �릺硫� 諛묒쨪怨� �꼫臾� 遺숈뼱踰꾨젮 蹂닿린�뿉 醫뗭� �븡�뒿�땲�떎. */
+	font-size: 20px; /* �������� ���Ǳ� ������ ũ�⸦ ũ�� ��� �ݴϴ�. */
+	border-bottom: 1px dotted #666; /* ���� �ϴ� �ο� ������ �־� �����̶�� ���� ǥ���� �ݴϴ�. */
+	width: 600px; /* ��ü ũ�⸦ ��� �ݴϴ�. */
+	padding: 5px 0; /* ���� �Ʒ��� ������ �ְ� �¿�δ� ������ ���ֹ����ϴ�. 
+                                      ������ �� �ְ� �Ǹ� ���ٰ� �ʹ� �پ���� ���⿡ ���� �ʽ��ϴ�. */
 }
 
 form label {
-	width: 140px; /* �쟾泥댁쓽 �겕湲곕�� �젙�쓽�빀�땲�떎. */
-	float: left; /* �쇊履쎌쑝濡� �씠�룞�떆�궢�땲�떎. */
-	margin: 5px 0; /* 留덉쭊�쓣 �씠�슜�빐�꽌 �긽�븯濡� 媛꾧꺽�쓣 以띾땲�떎. */
+	width: 140px; /* ��ü�� ũ�⸦ �����մϴ�. */
+	float: left; /* �������� �̵���ŵ�ϴ�. */
+	margin: 5px 0; /* ������ �̿��ؼ� ���Ϸ� ������ �ݴϴ�. */
 }
 
 form input {
-	margin: 5px 0; /* label怨� 留덉갔媛�吏�濡� �뿬湲곕룄 �룞�씪�븯寃� �긽�븯濡� 媛꾧꺽�쓣 以띾땲�떎. */
-	border: 1px solid #999; /* input 諛뺤뒪�쓽 �뀒�몢由� 紐⑥뼇�쓣 �젙�쓽�빐 以띾땲�떎. */
-	background-color: #FCFDEA; /* 諛곌꼍�깋�쓣 �씠�슜�븯�뿬 諛뷀깢�솕硫� �깋怨� 李⑤퀎�쓣 以띾땲�떎. */
+	margin: 5px 0; /* label�� ���������� ���⵵ �����ϰ� ���Ϸ� ������ �ݴϴ�. */
+	border: 1px solid #999; /* input �ڽ��� �׵θ� ����� ������ �ݴϴ�. */
+	background-color: #FCFDEA; /* ������ �̿��Ͽ� ����ȭ�� ���� ������ �ݴϴ�. */
 }
 
 form input.id {
@@ -310,17 +310,17 @@ form input.id {
 }
 
 form input.dup {
-	width: 90px; /* 踰꾪듉�쓽 媛�濡� �겕湲곕�� �젙�빀�땲�떎. */
-	height: 23px; /* 踰꾪듉�쓽 �꽭濡� �겕湲곕�� �젙�빀�땲�떎. */
-	border-radius: 8px; /* border-radius �넻�빐 �뫁洹몃윴 踰꾪듉�쑝濡� 留뚮벊�땲�떎. */
-	border: none; /* 諛곌꼍 �씠誘몄�媛� �뼱�몼湲� �븣臾몄뿉 �뿬湲곗꽌 border�뒗 �뾾�븷踰꾨━寃좎뒿�땲�떎. */
-	margin: 0 0 0 5px; /* 留덉쭊�쓣 �쇊履쎈쭔 以섏꽌 input怨쇱쓽 媛꾧꺽�쓣 踰뚮┰�땲�떎. */
-	font-weight: bold; /* 湲�瑗� �몢猿섎�� �몢猿띻쾶 */
-	color: #FFF; /* 湲�瑗댁쓽 �깋�긽�� �씛�깋�쑝濡� */
+	width: 90px; /* ��ư�� ���� ũ�⸦ ���մϴ�. */
+	height: 23px; /* ��ư�� ���� ũ�⸦ ���մϴ�. */
+	border-radius: 8px; /* border-radius ���� �ձ׷� ��ư���� ����ϴ�. */
+	border: none; /* ��� �̹����� ��ӱ� ������ ���⼭ border�� ���ֹ����ڽ��ϴ�. */
+	margin: 0 0 0 5px; /* ������ ���ʸ� �༭ input���� ������ �����ϴ�. */
+	font-weight: bold; /* �۲� �β��� �β��� */
+	color: #FFF; /* �۲��� ������ ������� */
 	background-image: url(../images/dup.jpg);
-	/* 諛깃렇�씪�슫�뱶 �씠誘몄�瑜� �궗�슜�빀�땲�떎. */
-	background-repeat: repeat-x; /* 諛깃렇�씪�슫�뱶 �씠誘몄�瑜� x異뺤쑝濡� 諛섎났 */
-	background-position: center center; /* 諛깃렇�씪�슫�뱶 �씠誘몄��쓽 �쐞移섎�� 以묒븰�쑝濡� �쐞移� */
+	/* ��׶��� �̹����� ����մϴ�. */
+	background-repeat: repeat-x; /* ��׶��� �̹����� x������ �ݺ� */
+	background-position: center center; /* ��׶��� �̹����� ��ġ�� �߾����� ��ġ */
 }
 
 form #buttons {
@@ -328,12 +328,12 @@ form #buttons {
 }
 
 form  .submit,form  .cancel {
-	height: 30px; /* 踰꾪듉�쓽 �꽭濡� �겕湲곕�� �젙�쓽�빀�땲�떎. */
-	width: 150px; /* 踰꾪듉�쓽 媛�濡� �겕湲곕�� �젙�쓽�빀�땲�떎. */
-	border: 1px solid #666; /* 踰꾪듉�쓽 �뀒�몢由щ�� �젙�쓽�빀�땲�떎. */
-	border-radius: 10px; /* border-radius瑜� �넻�빐 踰꾪듉�쓣 �뫁洹몃젃寃� 留뚮벊�땲�떎. */
-	box-shadow: 3px 3px 2px #ccc; /* box-shadow瑜� �씠�슜�빐�꽌 洹몃┝�옄瑜� 留뚮벊�땲�떎. */
-	font-size: 14px; /* 湲�瑗� �궗�씠利덈�� 議곗젅�빀�땲�떎. */
+	height: 30px; /* ��ư�� ���� ũ�⸦ �����մϴ�. */
+	width: 150px; /* ��ư�� ���� ũ�⸦ �����մϴ�. */
+	border: 1px solid #666; /* ��ư�� �׵θ��� �����մϴ�. */
+	border-radius: 10px; /* border-radius�� ���� ��ư�� �ձ׷��� ����ϴ�. */
+	box-shadow: 3px 3px 2px #ccc; /* box-shadow�� �̿��ؼ� �׸��ڸ� ����ϴ�. */
+	font-size: 14px; /* �۲� ����� �����մϴ�. */
 	background-repeat: repeat-x;
 	background-position: center center;
 	color: #fff;
@@ -346,15 +346,4 @@ form  .submit {
 
 form  .cancel {
 	background-image: url(../images/cancel_back.jpg);	
-}
-
-#comment_item {
-	width: 650px;
-	padding: 5px;
-	margin: 10px 0;
-	border-bottom: 1px solid #ccc;
-}
-
-#write_date {
-	margin-left: 30px;
 }

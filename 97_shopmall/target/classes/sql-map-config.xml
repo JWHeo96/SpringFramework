@@ -2,4 +2,13 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
 <configuration>
 	
+	<typeAliases>
+		<typeAlias type="com.ezen.biz.dto.ProductVO" alias="product"></typeAlias>
+	</typeAliases>
+
+	<!-- SQL 매핑 파일 등록 -->
+	<mappers>
+		<mapper resource="mappings/product-mapping.xml" />
+	</mappers>
+	
 </configuration>

@@ -16,6 +16,8 @@
 	<!-- location : css, image 파일의 실제 경로 지정 -->
 	<!-- mapping : 소스에서 리소스(css, image) 지정 형식 -->
 	<mvc:resources location="/WEB-INF/resources/css/" mapping="/css/**"></mvc:resources>
+	<mvc:resources location="/WEB-INF/resources/images/" mapping="/images/**"></mvc:resources>
+	<mvc:resources location="/WEB-INF/resources/product_images/" mapping="/product_images/**"></mvc:resources>
 	
 	<!-- 파일 전송 객체 등록 -->
 	<!-- 사이즈가 -1이면 크기 무제한 -->
