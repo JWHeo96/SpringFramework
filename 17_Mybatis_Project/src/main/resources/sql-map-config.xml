@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+<configuration>
+	<properties resource="database.properties" />
+	<typeAliases>
+		<typeAlias type="com.ezen.biz.dto.BoardVO" alias="board" />
+	</typeAliases>
+	
+	<!-- 데이터베이스 연결을 위한 DataSource -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}"/>
+				<property name="url" value="${jdbc.url}"/>
+				<property name="username" value="${jdbc.username}"/>
+				<property name="password" value="${jdbc.password}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- SQL 명령어들이 저장된 SQL 파일 등록 -->
+	<mappers>
+		<mapper resource="mappings/board-mapping.xml" />
+	</mappers>
+</configuration>

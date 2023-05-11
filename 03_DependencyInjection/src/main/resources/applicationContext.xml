@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="tv" class="com.ezen.biz.SamsungTV">
+		<constructor-arg ref="bose"></constructor-arg>
+		<constructor-arg value="27000"></constructor-arg>
+	</bean>
+	
+	<bean id="lgtv" class="com.ezen.biz.LgTV"></bean>
+	
+	<bean id="bose" class="com.ezen.biz.BoseSpeaker"></bean>
+	
+</beans>

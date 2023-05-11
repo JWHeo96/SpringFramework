@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 1. 생성자 주입 방식 -->
+	<!-- 
+	<bean id="tv" class="com.ezen.biz.SamsungTV">
+		<constructor-arg ref="jbl"></constructor-arg>
+		<constructor-arg value="27000"></constructor-arg>
+	</bean>
+	-->
+
+<!-- 2. Setter 주입 방식 --> 	
+	<!-- 
+	<bean id="tv" class="com.ezen.biz.SamsungTV">
+		<property name="speaker" ref="jbl" />
+		<property name="price" value="25000"></property>
+	</bean>
+	-->
+
+<!-- 3. Setter 주입 방식 : p 네임스페이스 사용하기 -->
+	<!--  
+	<bean id="tv" class="com.ezen.biz.SamsungTV"
+	p:speaker-ref="bose" p:price="280000" />
+
+	<bean id="lgtv" class="com.ezen.biz.LgTV" />
+	
+	<bean id="bose" class="com.ezen.biz.BoseSpeaker" lazy-init="true" />
+	<bean id="jbl" class="com.ezen.biz.JBLSpeaker" lazy-init="true" />
+	-->
+	
+<!-- 연습 문제 (1)-->
+	<!-- 
+	<bean id="player" class="exercise.Player">
+		<constructor-arg ref="gun" />
+	</bean>
+	<bean id="gun" class="exercise.Gun" lazy-init="true"/>
+	<bean id="knife" class="exercise.Knife" lazy-init="true"/>
+	<bean id="spike" class="exercise.Spike" lazy-init="true"/>
+	-->	
+
+<!-- 연습 문제 (2) -->
+	<!--  
+	<bean id="colorManager" class="exercise2.ColorManager">
+		<property name="color" ref="redColor"></property>
+	</bean>
+	
+	<bean id="redColor" class="exercise2.RedColor" />
+	<bean id="blueColor" class="exercise2.BlueColor" />
+	-->
+
+<!-- 컬렉션 의존성 주입 -->
+	<bean id="collectionBean" class="collection.CollectionBean">
+		<!-- List 타입 -->
+		<property name="addressList">
+			<list>
+				<value>서울시 강남구 역삼동</value>
+				<value>서울시 관악구 신림동</value>
+				<value>서울시 강서구 화곡동</value>
+			</list>
+		</property>
+		<!-- Set 타입 -->
+		<property name="movieList">
+			<set value-type="java.lang.String">
+				<value>존윅4</value>
+				<value>리바운드</value>
+				<value>스즈메의 문단속</value>
+				<value>랜필드</value>
+			</set>
+		</property>
+		<!-- Map 타입 -->
+		<property name="prefList">
+			<map>
+				<entry>
+					<key><value>국어</value></key>
+					<value>90</value>
+				</entry>
+				<entry>
+					<key><value>수학</value></key>
+					<value>85</value>
+				</entry>
+			</map>
+		</property>
+		<!-- Properties 타입 -->
+		<property name="propList">
+			<props>
+				<prop key="username">홍길동</prop>
+				<prop key="password">1234</prop>
+			</props>
+		</property>
+	</bean>
+</beans>
