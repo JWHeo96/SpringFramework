@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="War"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="war"/>
+			<item value="war-"/>
+			<item value="getSqlSession()"/>
+			<item value="seq"/>
+			<item value="SEQ"/>
+			<item value="상세"/>
+			<item value="logout_proc.jsp"/>
+			<item value="orange"/>
+			<item value="JDBC"/>
+			<item value="&lt;bean id=&quot;before&quot; class=&quot;com.ezen.biz.ex1.beforeAOP&quot; /&gt;"/>
+			<item value="aspe"/>
+			<item value="log.printLog();"/>
+			<item value="printLog"/>
+			<item value="prop"/>
+			<item value="pref"/>
+		</list>
+		<list key="replacehistory">
+			<item value="mybatis"/>
+			<item value="SEQ"/>
+			<item value="seq"/>
+			<item value="logout.do"/>
+			<item value="yelow"/>
+			<item value="// log.printLog(); 로깅 클래스 변경에 따른 수정"/>
+			<item value="log.printLog(); // 로깅 클래스 변경에 따른 수정"/>
+			<item value="printLogging"/>
+			<item value="printLog"/>
+			<item value="prop"/>
+			<item value="LgTV"/>
+			<item value="Lg"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="503"/>
+		<item key="DIALOG_Y_ORIGIN" value="269"/>
+		<item key="DIALOG_WIDTH" value="288"/>
+		<item key="DIALOG_HEIGHT" value="391"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+</section>

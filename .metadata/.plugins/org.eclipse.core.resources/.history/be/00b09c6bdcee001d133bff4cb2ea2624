@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+
+
+<configuration>
+
+	<!-- database.properties 를 연결하기위한 작업  -->
+	<properties resource="database.properties" />
+	<typeAliases>
+		<typeAlias type="com.ezen.biz.dto.UserVO" alias="user"></typeAlias>
+	</typeAliases>
+
+	<!-- SQL 명령어들이 저장된 SQL 파일 등록 -->
+	<mappers>
+		<mapper resource="mappings/user-mapping.xml" />
+	</mappers>
+</configuration>

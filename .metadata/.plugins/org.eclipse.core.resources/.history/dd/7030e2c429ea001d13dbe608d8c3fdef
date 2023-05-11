@@ -1,0 +1,107 @@
+package com.ezen.view.controller;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.ezen.biz.dao.BoardDAO;
+import com.ezen.biz.dto.BoardVO;
+
+@Controller
+public class BoardController {
+	
+	// 값이 1개일 때는 value= 생략 가능
+	@RequestMapping("/insertBoard.do")
+	public String insertBoard(BoardVO vo, BoardDAO boardDAO) {
+		System.out.println("게시글 등록  처리");
+		
+		// 2. DB 연동 처리
+		boardDAO.insertBoard(vo);
+		
+		// 3. 화면 네비게이션
+		return "getBoardList.do";
+	}
+	
+	@RequestMapping("/updateBoard.do")
+	public String updateBoard(BoardVO vo, BoardDAO boardDAO) {
+		System.out.println("게시글 수정 처리");
+		// 1. 사용자 입력 정보 추출
+
+		
+		// 2. DB 연동 처리
+
+		boardDAO.updateBoard(vo);
+		
+
+		// 3. 화면 네비게이션
+		return "getBoardList.do";
+	}
+	
+	@RequestMapping("/deleteBoard.do")
+	public String deleteBoard(BoardDAO boardDAO, BoardVO vo) {
+		System.out.println("게시글 삭제 처리");
+		// 1. 사용자 입력 정보 추출
+		
+		// 2. DB 연동 처리
+		boardDAO.deleteBoard(vo);
+		
+		
+		// 3. 화면 네비게이션
+		return "getBoardList.do";
+	}
+	
+	/*
+	 * 입력 파라미터:
+	 * 		Model model - JSP 화면으로 전달할 데이터를 저장
+	 */
+	@RequestMapping("/getBoard.do")
+	public String getBoard(BoardDAO boardDAO, BoardVO vo, Model model) {
+		System.out.println("게시글 상세 조회 처리");
+		// 1. 검색할 게시글 번호 추출
+		
+		// 2. DB 연동 처리
+		BoardVO board = boardDAO.getBoard(vo);
+		
+		// 3. 검색 결과를 세션에 저장하고 상세 화면을 리턴
+		model.addAttribute("board", board);
+		
+		return "getBoard.jsp";
+	}
+	
+	@ModelAttribute("conditionMap")
+	public Map<String, String> searchConditionMap() {
+		Map<String, String> conditionMap = new HashMap<>();
+		
+		conditionMap.put("제목","TITLE");
+		conditionMap.put("내용","CONTENT");
+		
+		return conditionMap;
+	}
+	
+	@RequestMapping(value="/getBoardList.do")
+	public String getBoardList(
+			@RequestParam(value="searchCondition", defaultValue="TITLE", required=false) 
+			String condition,
+			@RequestParam(value="searchKeyword", defaultValue="", required=false)
+			String keyword,
+			BoardDAO boardDAO, Model model) {
+		System.out.println("검색 조건 : " + condition);
+		System.out.println("검색 단어 : " + keyword);
+		// 1. 사용자 입력 정보 추출
+		// 2. DB 연동 처리
+		List<BoardVO> boardList = boardDAO.getBoardList();
+		
+		// DB에서 조회한 내용을 화면에 전달하기 위해 내장객체에 저장
+		model.addAttribute("boardList",boardList);
+		// 응답 화면 저장
+		
+		return "getBoardList.jsp";
+	}
+
+}
