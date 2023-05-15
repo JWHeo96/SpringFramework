@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="OrderMapper">
+
+	<!-- 주문번호 생성 -->
+	<select id="selectMaxOseq" resultType="int">
+		SELECT NVL2(MAX(oseq), MAX(oseq)+1, 1) from orders
+	</select>
+	
+	<!-- 새로운 주문 저장 -->
+	<insert id="insertOrder">
+		INSERT INTO orders(oseq, id) VALUES(#{oseq}, #{id})
+	</insert>
+	
+	<!-- 주문 상세정보 저장 -->
+	<insert id="insertOrderDetail">
+		INSERT INTO order_detail(odseq, oseq, pseq, quantity)
+		VALUES(order_detail_seq.NEXTVAL, #{oseq}, #{pseq}, #{quantity})
+	</insert>
+	
+	<select id="listOrderById" resultType="order">
+		SELECT * FROM order_view WHERE id=#{id} AND result LIKE '%'||#{id||'%' AND oseq=#{oseq}
+	</select> 
+	
+	<select id="selectSeqOrdering" resultType="order">
+		SELECT DISTINCT oseq FROM order_view WHERE id=#{id} AND result='1' ORDER BY oseq desc
+	</select>
+</mapper>

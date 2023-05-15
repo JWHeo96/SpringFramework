@@ -46,11 +46,11 @@ public class MemberDAO {
 		String pwd = mybatis.selectOne("MemberMapper.confirmID", vo);
 		
 		if (pwd == null) {
-			result = -1;
+			result = -1;	// ID가 존재하지 않음.
 		} else if (pwd.equals(vo.getPwd())){	// 정상 로그인
 			result = 1;
 		} else {
-			result = 0;
+			result = 0;	// 비밀번호 불일치
 		}
 		
 		return result;
