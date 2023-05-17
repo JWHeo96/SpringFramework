@@ -2,6 +2,7 @@
   pageEncoding="UTF-8"%>
 <%@ include file="header.jsp" %>  
 
+
   <!--메인 이미지 들어가는 곳 시작 --->
   
   <div class="clear"></div>

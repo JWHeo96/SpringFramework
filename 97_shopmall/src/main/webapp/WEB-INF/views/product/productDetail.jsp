@@ -31,7 +31,7 @@
     </div>
     
   <!-- 상품평 처리 -->
-  <%-- <%@ include file="comment.jsp" --%>
+  <%@ include file="comment.jsp" %>
   </article>
 <%@ include file="../footer.jsp" %>  
 

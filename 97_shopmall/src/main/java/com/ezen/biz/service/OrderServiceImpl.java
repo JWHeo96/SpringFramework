@@ -24,14 +24,14 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public int insertOrder(OrderVO vo) {
-		// 신규 주문 번호를 생성
+		// (1) 신규 주문 번호를 생성
 		int oseq = selectMaxOseq();
 		vo.setOseq(oseq);
 		
 		// (2) 신규주문을 주문테이블에 저장
 		orderDao.insertOrder(vo);
 		
-		// (3) 장바구니
+		// (3) 장바구니 목록을 읽어 order_detail 테이블에 저장
 		List<CartVO> cartList = cartService.listCart(vo.getId());
 		
 		for (CartVO  cart : cartList) {
@@ -42,6 +42,10 @@ public class OrderServiceImpl implements OrderService {
 			order.setQuantity(cart.getQuantity());
 			
 			insertOrderDetail(order);
+			/*
+			if (true)
+				throw new IllegalArgumentException("장바구니 데이터를 수정할 수 없습니다.");
+			 */
 			
 			// 장바구니 테이블 업데이트(주문처리 결과 업데이트)
 			cartService.updateCart(cart.getCseq());
@@ -54,6 +58,18 @@ public class OrderServiceImpl implements OrderService {
 	public void insertOrderDetail(OrderVO vo) {
 		
 		orderDao.insertOrderDetail(vo);
+	}
+
+	@Override
+	public List<OrderVO> getListOrderById(OrderVO vo) {
+		
+		return orderDao.listOrderById(vo);
+	}
+
+	@Override
+	public List<Integer> getSelectSeqOrdering(OrderVO vo) {
+
+		return orderDao.getSelectSeqOrdering(vo);
 	}
 
 }

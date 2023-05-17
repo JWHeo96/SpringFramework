@@ -9,9 +9,12 @@
         <fieldset>
         <legend></legend>
           <label>User ID</label>
+          <!--  
           <input name="id" type="text" value="${id}"><br> 
+          -->
+          <input name="id" type="text" value="heo"><br> 
           <label>Password</label> 
-          <input name="pwd" type="password"><br> 
+          <input name="pwd" type="password" value="1234"><br> 
         </fieldset>
         <div class="clear"></div>
         <div id="buttons">

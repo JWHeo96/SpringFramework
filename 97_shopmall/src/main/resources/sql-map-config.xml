@@ -8,6 +8,8 @@
 		<typeAlias type="com.ezen.biz.dto.AddressVO" alias="address"></typeAlias>
 		<typeAlias type="com.ezen.biz.dto.CartVO" alias="cart"></typeAlias>
 		<typeAlias type="com.ezen.biz.dto.OrderVO" alias="order"></typeAlias>
+		<typeAlias type="com.ezen.biz.dto.QnaVO" alias="qna"></typeAlias>
+		<typeAlias type="com.ezen.biz.dto.ProductCommentVO" alias="comment"></typeAlias>
 	</typeAliases>
 
 	<!-- SQL 매핑 파일 등록 -->
@@ -16,6 +18,8 @@
 		<mapper resource="mappings/member-mapping.xml" />
 		<mapper resource="mappings/cart-mapping.xml" />
 		<mapper resource="mappings/order-mapping.xml" />
+		<mapper resource="mappings/qna-mapping.xml" />
+		<mapper resource="mappings/comment-mapping.xml" />
 	</mappers>
 	
 </configuration>
