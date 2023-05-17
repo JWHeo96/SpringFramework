@@ -240,7 +240,7 @@ function newColour() {
        </c:when>
        <c:otherwise>
        <li style="color:orange">
-         ${sessionScope.loginUser.name}(${sessionScope.loginUser.id})
+         허장욱의 ${sessionScope.loginUser.name}(${sessionScope.loginUser.id})
        </li>
        <li><a href="logout">LOGOUT</a></li>
        </c:otherwise>       
