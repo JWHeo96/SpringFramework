@@ -26,7 +26,6 @@
 		<property name="configLocation" value="classpath:sql-map-config.xml"></property>
 	</bean>
 
-
 	<!-- SqlSessionTemlate 객체 등록 -->
 	<bean class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sessionFactory"></constructor-arg>
