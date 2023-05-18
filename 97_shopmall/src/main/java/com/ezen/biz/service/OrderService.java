@@ -14,5 +14,5 @@ public interface OrderService {
 
 	List<OrderVO> getListOrderById(OrderVO vo);
 	
-	public List<Integer> getSelectSeqOrdering(OrderVO vo);
+	List<Integer> getSelectSeqOrdering(OrderVO vo);
 }

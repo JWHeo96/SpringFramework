@@ -7,7 +7,9 @@
   
   <div class="clear"></div>
   <div id="main_img">
-    <img src="images/main_img.jpg" >    
+  <iframe width="720" height="460" src="https://www.youtube.com/embed/p8tbt9MbUdY?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <!-- <img src="images/main_img.jpg" >     -->
   </div>
        
   <!--메인 이미지 들어가는 곳 끝--->

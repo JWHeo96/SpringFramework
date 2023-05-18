@@ -20,5 +20,5 @@ public interface MemberService {
 	// 회원 등록
 	void insertMember(MemberVO vo);
 
-	public List<AddressVO> selectAddressByDong(String dong);
+	List<AddressVO> selectAddressByDong(String dong);
 }

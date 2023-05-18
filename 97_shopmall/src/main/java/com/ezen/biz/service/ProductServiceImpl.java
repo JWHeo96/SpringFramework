@@ -8,30 +8,57 @@ import org.springframework.stereotype.Service;
 import com.ezen.biz.dao.ProductDAO;
 import com.ezen.biz.dto.ProductVO;
 
+import utils.Criteria;
+
 @Service
 public class ProductServiceImpl implements ProductService {
 
 	@Autowired
-	private ProductDAO productDAO;
+	private ProductDAO productDao;
 	
 	@Override
 	public List<ProductVO> getNewProductList() {
-		return productDAO.getNewProductList();
+		return productDao.getNewProductList();
 	}
 
 	@Override
 	public List<ProductVO> getBestProductList() {
-		return productDAO.getBestProductList();
+		return productDao.getBestProductList();
 	}
 
 	@Override
 	public ProductVO getProduct(ProductVO vo) {
-		return productDAO.getProduct(vo);
+		return productDao.getProduct(vo);
 	}
 
 	@Override
 	public List<ProductVO> getProductListByKind(String kind) {
-		return productDAO.getProductListByKind(kind);
+		return productDao.getProductListByKind(kind);
+	}
+
+	@Override
+	public int countProductList(String name) {
+		return productDao.countProductList(name);
+	}
+	
+	@Override
+	public List<ProductVO> getListProductWithPaging(Criteria criteria, String name) {
+		return productDao.listProductWithPaging(criteria, name);
+	}
+
+	@Override
+	public List<ProductVO> getListProduct(String name) {
+		return productDao.listProduct(name);
+	}
+	
+	@Override
+	public void insertProduct(ProductVO vo) {
+		productDao.insertProduct(vo);
+	}
+
+	@Override
+	public void updateProduct(ProductVO vo) {
+		productDao.updateProduct(vo);
 	}
 
 }

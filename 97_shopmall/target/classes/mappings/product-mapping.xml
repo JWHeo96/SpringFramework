@@ -22,4 +22,46 @@
 		SELECT * FROM product WHERE kind=#{kind} ORDER BY name
 	</select>
 	
+	<!-- 총 상품 목록의 개수 조회 -->
+	<select id="countProductList" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM product 
+		WHERE name LIKE '%'||#{name}||'%'
+	</select>
+	
+	<!-- 상품 목록 조회 -->
+	<select id="listProduct" parameterType="String" resultType="product">
+		SELECT pseq, regdate, name, price1, price2, useyn, bestyn
+		FROM product 
+		WHERE name LIKE '%'||#{name}||'%'
+		ORDER BY name
+	</select>
+	
+	<!-- 페이지별 상품목록 조회 -->
+	<select id="listProductWithPaging" resultType="product">
+		<![CDATA[
+		SELECT pseq, regdate, name, price1, price2, useyn, bestyn 
+	    FROM (SELECT row_number() OVER (ORDER BY name) rn, pseq, regdate, name, price1, price2, useyn, bestyn
+	            FROM product 
+	            WHERE name LIKE '%'||#{name}||'%') 
+	    WHERE rn > (#{criteria.pageNum} - 1) * #{criteria.rowsPerPage}
+	      AND rn <= (#{criteria.pageNum} * #{criteria.rowsPerPage})
+	    ]]>
+	</select>
+	
+	<!-- 상품 추가 -->
+	<insert id="insertProduct" parameterType="product">
+		INSERT INTO product(pseq, name, kind, price1, 
+							price2, price3, content, image)
+		VALUES(product_seq.NEXTVAL, #{name}, #{kind}, 
+				#{price1}, #{price2}, #{price3}, #{content}, #{image})
+	</insert>
+	
+	<!-- 상품 수정 -->
+	<update id="updateProduct" parameterType="product">
+		UPDATE product SET kind=#{kind}, useyn=#{useyn}, 
+				name=#{name}, price1=#{price1},
+				price2=#{price2}, price3=#{price3}, 
+				content=#{content}, image=#{image}, bestyn=#{bestyn}
+		WHERE pseq=#{pseq}
+	</update>
 </mapper>

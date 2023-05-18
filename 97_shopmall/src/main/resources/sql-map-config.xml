@@ -10,6 +10,7 @@
 		<typeAlias type="com.ezen.biz.dto.OrderVO" alias="order"></typeAlias>
 		<typeAlias type="com.ezen.biz.dto.QnaVO" alias="qna"></typeAlias>
 		<typeAlias type="com.ezen.biz.dto.ProductCommentVO" alias="comment"></typeAlias>
+		<typeAlias type="com.ezen.biz.dto.AdminVO" alias="admin" />
 	</typeAliases>
 
 	<!-- SQL 매핑 파일 등록 -->
@@ -20,6 +21,7 @@
 		<mapper resource="mappings/order-mapping.xml" />
 		<mapper resource="mappings/qna-mapping.xml" />
 		<mapper resource="mappings/comment-mapping.xml" />
+		<mapper resource="mappings/admin-mapping.xml" />
 	</mappers>
 	
 </configuration>

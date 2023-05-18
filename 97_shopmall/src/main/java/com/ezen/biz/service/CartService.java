@@ -16,5 +16,5 @@ public interface CartService {
 	void deleteCart(int cseq);
 
 	// 장바구니 처리결과 업데이트
-	public void updateCart(int cseq);
+	void updateCart(int cseq);
 }

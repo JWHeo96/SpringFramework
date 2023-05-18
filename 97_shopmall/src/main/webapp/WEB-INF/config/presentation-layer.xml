@@ -20,6 +20,7 @@
 	<mvc:resources location="/WEB-INF/resources/product_images/" mapping="/product_images/**"></mvc:resources>
 	<mvc:resources location="/WEB-INF/views/member/" mapping="/member/**"></mvc:resources>
 	<mvc:resources location="/WEB-INF/views/mypage/" mapping="/mypage/**"></mvc:resources>
+	<mvc:resources location="/WEB-INF/views/admin/" mapping="/admin/**"></mvc:resources>
 	
 	<!-- 파일 전송 객체 등록 -->
 	<!-- 사이즈가 -1이면 크기 무제한 -->
