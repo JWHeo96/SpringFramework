@@ -15,4 +15,8 @@ public interface OrderService {
 	List<OrderVO> getListOrderById(OrderVO vo);
 	
 	List<Integer> getSelectSeqOrdering(OrderVO vo);
+	
+	List<OrderVO> getListOrder(String mname);
+		
+	void updateOrderResult(int odseq);
 }

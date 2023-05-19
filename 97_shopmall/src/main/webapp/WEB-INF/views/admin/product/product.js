@@ -4,11 +4,13 @@
 /*
  * 상품 상세보기
  */
-function go_detail(pseq) {
-	var form = document.getElementById("prod_form");
-	
-	form.action = "admin_product_detail?pseq=" + pseq;
-	form.submit();
+function go_detail(pageNum, rowsPerPage, pseq) {
+	var theform = document.getElementById("prod_form");
+	var url = "admin_product_detail?pageNum=" + pageNum
+				+ "&rowsPerPage=" + rowsPerPage
+				+ "&pseq=" + pseq;
+	theform.action = url;
+	theform.submit();
 }
 
 /*
@@ -16,26 +18,19 @@ function go_detail(pseq) {
  */
 function go_search() {
 	var theform = document.getElementById("prod_form");
-	
+
 	theform.action = "admin_product_list";
 	theform.submit();	
 }
 
-
+/*
+ * 상품등록 화면 표시 요청
+ */R
 function go_wrt() {
-	var form = document.getElementById("prod_form");
-	
-	form.action = "admin_product_write_form";
-	form.submit();
-}
-
-
-function go_total() {
-	var form = document.getElementById("prod_form");
-	document.getElementById("key").value = "";
-	
-	form.action = "admin_product_list";
-	form.submit();	
+	var theform = document.getElementById("prod_form");
+	theform.method = "GET";
+	theform.action = "admin_product_write_form";
+	theform.submit();
 }
 
 /*
@@ -47,6 +42,15 @@ function go_ab() {
 	
 	document.getElementById("price3").value = price2 - price1;
 }
+
+function go_total() {
+	var form = document.getElementById("prod_form");
+	document.getElementById("key").value = "";
+	
+	form.action = "admin_product_list";
+	form.submit();	
+}
+
 
 /*
  * 상품 등록 요청
@@ -77,25 +81,26 @@ function go_save() {
 		document.getElementById("content").focus();
 		return false;
 	} else {
-		var form = document.getElementById("write_form");
-		form.enctype = "multipart/form-data";
-		form.action = "admin_product_write";
-		form.submit();
+		var theform = document.getElementById("write_form");
+		theform.enctype = "multipart/form-data";
+		theform.action = "admin_product_write";
+		theform.submit();
 	}
 }
 
 
 function go_list() {
-	var form = document.getElementById("detail_form");
+	var theform = document.getElementById("detail_form");
 	
-	form.action = "admin_product_list";
-	form.submit();
+	theform.action = "admin_product_list";
+	theform.submit();
 }
 
-function go_mod(pseq) {
-	var form = document.getElementById("detail_form");
-	form.action = "admin_product_update_form?pseq="+pseq;
-	form.submit();
+function go_mod() {
+	var theform = document.getElementById("detail_form");
+	theform.action = "admin_product_update_form";
+	theform.method = "GET";
+	theform.submit();
 }
 
 function go_mod_save(pseq) {
@@ -124,14 +129,35 @@ function go_mod_save(pseq) {
 		document.getElementById("content").focus();
 		return false;
 	} else {
-		var form = document.getElementById("update_form");
+		var theform = document.getElementById("update_form");
 		
-		form.enctype = "multipart/form-data";
-		form.action = "admin_product_update";
-		form.submit();
+		theform.enctype = "multipart/form-data";
+		theform.action = "admin_product_update";
+		theform.submit();
 	}
 }
 
+function set_useyn() {
+	var is_checked = document.getElementById("useyn").checked;
+	
+	if (is_checked) {
+		document.getElementById("useyn").value = 'y';
+	} else {
+		document.getElementById("useyn").value = 'n';
+	}
+	console.log("useyn="+document.getElementById("useyn").value);
+}
+
+function set_bestyn() {
+	var is_checked = document.getElementById("bestyn").checked;
+	
+	if (is_checked) {
+		document.getElementById("bestyn").value = 'y';
+	} else {
+		document.getElementById("bestyn").value = 'n';
+	}
+	console.log("bestyn="+document.getElementById("bestyn").value);
+}
 
 
 

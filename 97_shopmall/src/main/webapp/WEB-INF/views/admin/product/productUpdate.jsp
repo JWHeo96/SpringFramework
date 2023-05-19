@@ -52,10 +52,10 @@
     <td>
       <c:choose>
         <c:when test='${productVO.bestyn=="y"}'>
-          <input type="checkbox" name="bestyn" value="y" id="bestyn" checked="checked">
+          <input type="checkbox" name="bestyn" value="y" id="bestyn" onchange ="set_bestyn()" checked="checked">
         </c:when>
         <c:otherwise>
-          <input type="checkbox" name="bestyn" value="n" id="bestyn" >
+          <input type="checkbox" name="bestyn" value="n" id="bestyn" onchange = "set_bestyn()">
         </c:otherwise>
       </c:choose>
     </td>        
@@ -63,10 +63,10 @@
     <td>
       <c:choose>
         <c:when test='${productVO.useyn=="y"}'>
-          <input type="checkbox" name="useyn" id="useyn" value="y" checked="checked">
+          <input type="checkbox" name="useyn" id="useyn" value="y" onchange ="set_useyn()" checked="checked">
         </c:when>
       <c:otherwise>
-        <input type="checkbox" name="useyn" id="useyn" value="n">
+        <input type="checkbox" name="useyn" id="useyn" value="n" onchange="set_useyn()" >
       </c:otherwise>
     </c:choose>
     </td>

@@ -26,6 +26,8 @@
 			</div>
 			<font color="red"><b>${sessionScope.admin.name}(${sessionScope.admin.id})</b></font>	 님 환영합니다!
 			<input class="btn" type="button"  value="logout"  style="float: right;"
-			   onClick="location.href='admin_logout'">			
+			   onClick="location.href='admin_logout'">		
+   			<input class="btn" type="button"  value="Home"  style="float: right;"
+			   onClick="location.href='index'">		
 		</header>
 		<div class="clear"></div>

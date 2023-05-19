@@ -37,7 +37,7 @@
 	</select>
 	
 	<!-- 페이지별 상품목록 조회 -->
-	<select id="listProductWithPaging" resultType="product">
+	<select id="listProductWithPaging" parameterType="hashMap" resultType="product">
 		<![CDATA[
 		SELECT pseq, regdate, name, price1, price2, useyn, bestyn 
 	    FROM (SELECT row_number() OVER (ORDER BY name) rn, pseq, regdate, name, price1, price2, useyn, bestyn

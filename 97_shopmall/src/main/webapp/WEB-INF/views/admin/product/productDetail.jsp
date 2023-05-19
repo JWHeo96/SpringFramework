@@ -8,6 +8,7 @@
 <form name="frm" id="detail_form" method="post">
 <input type="hidden" name="pageNum" value="${criteria.pageNum}">
 <input type="hidden" name="rowsPerPage" value="${criteria.rowsPerPage}">
+<input type="hidden" name="pseq" value="${productVO.pseq }" >
 <table id="list">
   <tr>
     <th>상품분류</th>
@@ -43,7 +44,7 @@
      
 </table>
 <!--[8] 수정 버튼이 눌리면 상품 수정 페이지로 이동하되 현재 페이지와 상품 일련번호 값을 전달해 준다. --> 
-<input class="btn"  type="button" value="수정" onClick="go_mod('${productVO.pseq}')">
+<input class="btn"  type="button" value="수정" onClick="go_mod()">
 <!--[9] 목록 버튼이 눌리면 상품 리스트 페이지로 이동하되 현재 페이지를 전달해 준다. --> 
 <input class="btn"  type="button" value="목록" onClick="go_list()">           
 </form>

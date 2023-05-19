@@ -72,4 +72,16 @@ public class OrderServiceImpl implements OrderService {
 		return orderDao.getSelectSeqOrdering(vo);
 	}
 
+	@Override
+	public List<OrderVO> getListOrder(String mname) {
+		
+		return orderDao.listOrder(mname);
+	}
+
+	@Override
+	public void updateOrderResult(int odseq) {
+		
+		orderDao.updateOrderResult(odseq);
+	}
+
 }

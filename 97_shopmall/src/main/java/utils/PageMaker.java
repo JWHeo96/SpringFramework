@@ -1,5 +1,8 @@
 package utils;
 
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
+
 public class PageMaker {
 	
 	private Criteria cri;	
@@ -63,6 +66,22 @@ public class PageMaker {
 		prev = (startPage == 1 ? false : true);
 		next = (endPage * cri.getRowsPerPage() < totalCount ? true : false);
 	}
+	
+	/*
+	 * 입력 파라미터: 클릭한 페이지 번호
+	 * 출력: QueryString으로 페이지 번호와 페이지당 항목수를 만들어 주는 메소드
+	 * 예: 3페이지 클릭
+	 * 		?pageNum=3&rowsPerPage=10
+	 */
+	public String makeQuery(int page) {
+		UriComponents uri = UriComponentsBuilder.newInstance()
+				.queryParam("pageNum", page)
+				.queryParam("rowsPerPage", cri.getRowsPerPage())
+				.build();
+		
+		return uri.toString();
+	}
+	
 	public int getStartPage() {
 		return startPage;
 	}

@@ -8,10 +8,10 @@
 <form name="frm" id="prod_form" method="post">
 <table>
   <tr>
-  <td width="642">
+  <td width="695">
       상품명 
      <input type="text" name="key" id="key">
-     <input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">
+     <input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()"> <br>
      <input class="btn" type="button" name="btn_total" value="전체보기" onClick="go_total()">
      <input class="btn" type="button" name="btn_write" value="상품등록" onClick="go_wrt()">
      <input class="btn" type="button" name="btn_chart" value="상품별 실적" onClick="location.href='admin_sales_record_form'">
@@ -36,8 +36,7 @@
       <%-- <td height="23" align="center" >${productVO.pseq}</td> --%>
       <td height="23" align="center">${status.count}</td>
       <td style="text-align: left; padding-left: 50px; padding-right: 0px;">   
-<%--          <a href="#" onclick="go_detail('${pageMaker.criteria.pageNum}','${pageMaker.criteria.rowsPerPage}','${productVO.pseq}')"> --%>
-  		<a href="#" onclick="go_detail('${productVO.pseq}')">    
+        <a href="#" onclick="go_detail('${pageMaker.cri.pageNum}','${pageMaker.cri.rowsPerPage}','${productVO.pseq}')"> 
     	 ${productVO.name}     
    		</a>
    	  </td>

@@ -38,7 +38,8 @@ CREATE TABLE product(
 );
 
 DROP SEQUENCE product_seq;
-
+select * from admin;
+select * from product;
 CREATE SEQUENCE product_seq START WITH 1 INCREMENT BY 1;
 
 -- 상품
@@ -164,9 +165,9 @@ CREATE TABLE qna(
     qseq        NUMBER(5) PRIMARY KEY,
     subject     VARCHAR2(30),
     content     VARCHAR2(1000),
-    reply       VARCHAR2(1000),
+    reply       VARCHAR2(1000), -- QnA 답글
     id          VARCHAR2(20),
-    rep         CHAR(1) DEFAULT '1',
+    rep         CHAR(1) DEFAULT '1',  -- 답글 여부
     indate      DATE DEFAULT sysdate,
     CONSTRAINT fk_qna_id FOREIGN KEY(id) REFERENCES member(id)
 );
@@ -183,6 +184,28 @@ insert into qna (qseq, subject, content, id)
 values(qna_seq.nextval, '테스트2', '질문내용2', 'one');
 commit;
 
+-- 상품평 테이블 생성
+DROP TABLE product_comment CASCADE CONSTRAINTS;
+
+CREATE TABLE product_comment (
+    comment_seq NUMBER PRIMARY KEY,
+    pseq        NUMBER(5,0) NOT NULL,
+    content     VARCHAR2(1024) NOT NULL,
+    writer      VARCHAR2(20) NOT NULL,
+    regdate     DATE DEFAULT sysdate,
+    modifydate  DATE DEFAULT sysdate,
+    CONSTRAINT "prod_comment_fk" FOREIGN KEY(pseq)
+        REFERENCES product(pseq)
+);
+		INSERT INTO product_comment(comment_seq, pseq, content, writer)
+		VALUES(prod_comment_seq.NEXTVAL, 2,'conten','heo');
+        select * from product_comment;
+        
+CREATE SEQUENCE prod_comment_seq
+    START WITH 1
+    INCREMENT BY 1;
+    
+    
 -- 신상품 조회
 -- 신상품 조회 뷰 생성
 CREATE OR REPLACE VIEW new_pro_view AS
@@ -220,3 +243,79 @@ select * from address;
 drop table address;
 commit;
 
+select * from cart;
+
+-- 장바구니 보기 뷰 생성
+-- 컬럼명 : 카트번호, 회원ID, 상품번호, 회원명, 상품명, 수량, 판매가, 등록일자.
+CREATE OR REPLACE VIEW cart_view
+AS
+SELECT c.cseq, m.id, p.pseq, m.name mname, p.name pname, c.quantity, p.price2, c.indate, c.result
+    FROM cart c, product p, member m
+    WHERE c.pseq = p.pseq
+    AND c.id = m.id
+    AND result = '1';
+select * from cart;
+select * from orders;
+    
+    
+SELECT * FROM cart_view where id='heo';
+
+SELECT NVL2(MAX(oseq), MAX(oseq)+1, 1) from orders;
+
+-- 주문처리 확인 뷰
+-- 컬럼명: 주문상세번호, 주문번호, 회원ID, 주문일, 주문회원명
+--        우편번호, 주소, 전화번호, 상품번호, 상품명, 수량, 가격, 처리결과
+CREATE OR REPLACE VIEW order_view AS
+SELECT d.odseq, o.oseq, m.id, o.indate, m.name mname, m.zip_num, m.address, m.phone,
+       d.pseq, p.name pname, d.quantity, p.price2, d.result
+   FROM orders o, order_detail d, member m, product p
+  WHERE d.oseq = o.oseq 
+    AND d.pseq = p.pseq 
+    AND o.id = m.id order by odseq;
+    
+-- ANSI SQL 조인문
+SELECT d.odseq, o.oseq, m.id, o.indate, m.name mname, m.zip_num, m.address, m.phone,
+       d.pseq, p.name pname, d.quantity, p.price2, d.result
+   FROM orders o
+  INNER JOIN order_detail d
+     ON d.oseq=o.oseq
+  INNER JOIN product p
+     ON d.pseq=p.pseq
+  INNER JOIN member m
+     ON o.id=m.id
+  ORDER BY odseq;
+  
+  select * from orders;
+  		SELECT * FROM order_view 
+		 WHERE id='heo' 
+		   AND oseq='15'
+		   AND result LIKE '%'||'1'||'%'
+		 ORDER BY oseq DESC; 
+  
+  SELECT * FROM order_view where id='one';
+  
+-- 특정 회원의 진행중인 주문번호 조회
+SELECT DISTINCT oseq FROM order_view 
+ WHERE id='heo' 
+   AND result='1' 
+  ORDER BY oseq DESC;
+   
+   		SELECT * FROM order_view 
+		 WHERE id='heo'
+		   AND oseq='7'
+		   AND result LIKE '%'||'%'||'%'
+		 ORDER BY oseq DESC; 
+   
+select * from order_detail;  
+   
+COMMIT;
+
+SELECT rn,pseq, regdate, name, price1, price2, useyn, bestyn 
+    FROM (SELECT row_number() OVER (ORDER BY name) rn, pseq, regdate, name, price1, price2, useyn, bestyn
+            FROM product 
+            WHERE name LIKE '%'||''||'%') 
+    WHERE rn > (pageNum - 1) * rowsPerPage
+      AND rn <= (pageNum * rowsPerPage);
+      
+      
+      
