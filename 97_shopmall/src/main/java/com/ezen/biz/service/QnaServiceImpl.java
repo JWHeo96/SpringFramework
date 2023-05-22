@@ -32,4 +32,16 @@ public class QnaServiceImpl implements QnaService {
 		qnaDao.insertQna(vo);
 	}
 
+	@Override
+	public List<QnaVO> listAllQna() {
+		
+		return qnaDao.listAllQna();
+	}
+
+	@Override
+	public void updateQna(QnaVO vo) {
+		
+		qnaDao.updateQna(vo);
+	}
+
 }

@@ -130,5 +130,53 @@ public class MemberController {
 		
 		return "member/findZipNum";
 	}
+	
+	@GetMapping("/find_id_form")
+	public String findIdForm() {
+		return "member/findIdAndPassword";
+	}
+	
+	@GetMapping("/find_pwd_form")
+	public String findPwdForm() {
+		return "member/findPassword";
+	}
+	
+	@PostMapping("/find_id")
+	public String findIdAction(MemberVO vo, Model model) {
+		
+		String id = memberService.selectIdByNameEmail(vo);
+		
+		if (id != null ) {	// 아이디 존재
+			model.addAttribute("message", 1);
+			model.addAttribute("id", id);
+		} else {
+			model.addAttribute("message",-1);
+		}
+		
+		return "member/findResult";	// 아이디 조회결과 표시
+	}
+
+	@PostMapping("/find_pwd")
+	public String findPwdAction(MemberVO vo, Model model) {
+		String pwd = memberService.selectPwdByIdNameEmail(vo);
+		
+		if (pwd != null ) {	
+			model.addAttribute("message", 1);
+			model.addAttribute("id", vo.getId());
+		} else {
+			model.addAttribute("message", -1);
+		}
+		
+		
+		return "member/findPwdResult";
+	}
+	
+	@PostMapping("/change_pwd")
+	public String changePassword(MemberVO vo) {
+		
+		memberService.changePwd(vo);
+		
+		return "member/changePwdOk";
+	}
 
 }

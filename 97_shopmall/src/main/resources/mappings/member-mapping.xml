@@ -22,4 +22,28 @@
 	<select id="selectAddressByDong" resultType="address">
 		SELECT * FROM address WHERE dong LIKE '%'||#{dong}||'%'
 	</select>
+	
+	<!-- 회원 전제 초회 -->
+	<select id="listMember" resultType="member">
+		SELECT * FROM member WHERE name  LIKE '%'||#{name}||'%'
+		ORDER BY regdate desc
+	</select>
+	
+	
+	<!-- 이름, 이메일로 아이디 찾기 -->
+	<select id="selectIdByNameEmail" resultType="String">
+		SELECT id FROM member 
+		WHERE name=#{name} AND email=#{email}
+	</select>
+	
+	<!-- 아이디, 이름, 이메일로 비밀번호 찾기 -->
+	<select id="selectPwdByIdNameEmail" resultType="String">
+		SELECT pwd FROM member WHERE id=#{id}
+		AND name=#{name} AND email=#{email}
+	</select>
+	
+	<!-- 새 비밀번호 -->
+	<update id="changePwd">
+		UPDATE member SET pwd=#{pwd} WHERE id=#{id}
+	</update>
 </mapper>

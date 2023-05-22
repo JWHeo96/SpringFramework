@@ -83,3 +83,73 @@ function post_zip() {
 			" scrollbars=yes, resizable=no, width=700, height=500")	
 }
 
+/*
+ * 아이디 찾기 화면 요청
+ */
+function find_id_form() {
+	var url = "find_id_form";
+	window.open(url, "_blank_", "toolbar=no, menubar=no," +
+			" scrollbars=yes, resizable=no, width=450, height=450")	
+}
+
+/*
+ * 비밀번호 찾기 화면 요청
+ */
+function find_pwd_form() {
+	var url = "find_pwd_form";
+	window.open(url, "_blank_", "toolbar=no, menubar=no," +
+		" scrollbars=yes, resizable=no, width=450, height=450")	
+}
+
+function findMemberId() {
+	if (document.getElementById("name").value=="") {
+		alert("이름을 입력해 주세요");
+		document.getElementById("name").focus();
+		return false;
+	} else if (document.getElementById("email").value=="") {
+		alert("이메일을 입력해 주세요");
+		document.getElementById("email").focus();
+		return false;
+	} else {
+		var form = document.getElementById("findId");
+		form.action = "find_id";
+		form.submit();
+	}
+}
+
+function findPassword() {
+	if (document.getElementById("id2").value=="") {
+			alert("아이디을 입력해 주세요");
+			document.getElementById("id2").focus();
+			return false;
+	}	else if (document.getElementById("name2").value=="") {
+		alert("이름을 입력해 주세요");
+		document.getElementById("name2").focus();
+		return false;
+	} else if (document.getElementById("email2").value=="") {
+		alert("이메일을 입력해 주세요");
+		document.getElementById("email2").focus();
+		return false;
+	} else {
+		var form = document.getElementById("findPW");
+		form.action = "find_pwd";
+		form.submit();
+	}
+}
+
+function changePassword() {
+	if (document.getElementById("pwd").value == "") {
+		alert("비밀번호를 입력해 주세요");
+		document.getElementById("pwd").focus();
+		return false;
+	} else if (document.getElementById("pwd").value
+				!= document.getElementById("pwdcheck").value) {
+		alert("비밀번호가 맞지 않습니다.");
+		document.getElementById("pwd").focus();
+		return false;
+	} else {
+		var form = document.getElementById("pwd_form");
+		form.action = "change_pwd";
+		form.submit();
+	}
+}

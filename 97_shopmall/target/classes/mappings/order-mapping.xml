@@ -46,4 +46,17 @@
 	<update id="updateOrderResult">
 		UPDATE order_detail SET result='2' WHERE odseq=#{odseq}
 	</update>
+	
+	<!-- 제품 판매 실적 조회 -->
+	<resultMap id="salesMap" type="com.ezen.biz.dto.SalesQuantity">
+		<result column="pname" property="pname"></result>
+		<result column="sales_count" property="quantity"></result>
+	</resultMap>
+	
+	<select id="listProductSales" resultMap="salesMap">
+		SELECT pname, SUM(quantity) as sales_count
+			FROM order_view
+			WHERE result='2'
+			GROUP BY pname
+	</select>
 </mapper>

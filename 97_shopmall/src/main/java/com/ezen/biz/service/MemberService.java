@@ -21,4 +21,12 @@ public interface MemberService {
 	void insertMember(MemberVO vo);
 
 	List<AddressVO> selectAddressByDong(String dong);
+	
+	List<MemberVO> listMember(String name);
+	
+	String selectIdByNameEmail(MemberVO vo);
+	
+	String selectPwdByIdNameEmail(MemberVO vo);
+	
+	void changePwd(MemberVO vo);
 }

@@ -65,4 +65,22 @@ public class MemberDAO {
 	public List<AddressVO> selectAddressByDong(String dong) {
 		return mybatis.selectList("MemberMapper.selectAddressByDong",dong);
 	}
+	
+	// 회원 전체 조회
+	public List<MemberVO> listMember(String name){
+		return mybatis.selectList("MemberMapper.listMember", name);
+	}
+	
+	public String selectIdByNameEmail(MemberVO vo) {
+		return mybatis.selectOne("MemberMapper.selectIdByNameEmail", vo);
+	}
+	
+	public String selectPwdByIdNameEmail(MemberVO vo) {
+		return mybatis.selectOne("MemberMapper.selectPwdByIdNameEmail", vo);
+	}
+	
+	public void changePwd(MemberVO vo) {
+		mybatis.update("MemberMapper.changePwd",vo);
+	}
+	
 }

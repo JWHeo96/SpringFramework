@@ -3,6 +3,7 @@ package com.ezen.biz.service;
 import java.util.List;
 
 import com.ezen.biz.dto.ProductVO;
+import com.ezen.biz.dto.SalesQuantity;
 
 import utils.Criteria;
 
@@ -34,5 +35,6 @@ public interface ProductService {
 	void insertProduct(ProductVO vo);
 	
 	// 상품 수정
-	void updateProduct(ProductVO vo); 
+	void updateProduct(ProductVO vo);
+	
 }

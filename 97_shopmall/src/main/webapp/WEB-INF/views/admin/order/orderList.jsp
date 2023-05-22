@@ -26,7 +26,6 @@
   
   function go_search() {
 	var theForm = document.frm;
-	theForm.method = "GET";
 	theForm.action =  "admin_order_list";
 	theForm.submit();
   }

@@ -2,7 +2,13 @@
   pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
 <%@ include file="../sub_menu.jsp"%>
-
+<script type="text/javascript">
+	function go_mov() {
+		var form = document.getElementById("update_form");
+		form.action = "admin_product_list";
+		form.submit();
+	}
+</script>
 <article>
 <h1>상품수정</h1>  
 <form name="frm" id="update_form" method="post" enctype="multipart/form-data">

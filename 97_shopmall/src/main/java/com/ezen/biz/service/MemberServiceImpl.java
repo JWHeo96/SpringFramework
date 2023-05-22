@@ -43,4 +43,28 @@ public class MemberServiceImpl implements MemberService {
 		return memberDao.loginID(vo);
 	}
 
+	@Override
+	public List<MemberVO> listMember(String name) {
+		return memberDao.listMember(name);
+	}
+
+	@Override
+	public String selectIdByNameEmail(MemberVO vo) {
+
+		return memberDao.selectIdByNameEmail(vo);
+	}
+
+	@Override
+	public String selectPwdByIdNameEmail(MemberVO vo) {
+		
+		return memberDao.selectPwdByIdNameEmail(vo);
+	}
+
+	@Override
+	public void changePwd(MemberVO vo) {
+		
+		memberDao.changePwd(vo);
+		
+	}
+
 }

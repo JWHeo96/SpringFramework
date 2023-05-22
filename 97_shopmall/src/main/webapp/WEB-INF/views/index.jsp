@@ -7,9 +7,9 @@
   
   <div class="clear"></div>
   <div id="main_img">
-  <iframe width="720" height="460" src="https://www.youtube.com/embed/p8tbt9MbUdY?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <!-- <iframe width="720" height="460" src="https://www.youtube.com/embed/p8tbt9MbUdY?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
 
-    <!-- <img src="images/main_img.jpg" >     -->
+  <img src="images/main_img2.jpg" width="650" height="460" />     
   </div>
        
   <!--메인 이미지 들어가는 곳 끝--->

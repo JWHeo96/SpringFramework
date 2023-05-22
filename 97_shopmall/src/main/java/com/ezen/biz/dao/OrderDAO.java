@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.ezen.biz.dto.OrderVO;
+import com.ezen.biz.dto.SalesQuantity;
 
 @Repository
 public class OrderDAO {
@@ -49,5 +50,11 @@ public class OrderDAO {
 	public void updateOrderResult(int odseq) {
 		
 		mybatis.update("OrderMapper.updateOrderResult", odseq);
+	}
+	
+	// 상품 판매실적 조회
+	public List<SalesQuantity> getProductSales() {
+		
+		return mybatis.selectList("OrderMapper.listProductSales");
 	}
 }

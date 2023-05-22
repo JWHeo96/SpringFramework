@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.ezen.biz.dto.ProductVO;
+import com.ezen.biz.dto.SalesQuantity;
 
 import utils.Criteria;
 
@@ -76,4 +77,5 @@ public class ProductDAO {
 	public void updateProduct(ProductVO vo) {
 		mybatis.update("ProductMapper.updateProduct", vo);
 	}
+	
 }

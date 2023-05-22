@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.ezen.biz.dao.OrderDAO;
 import com.ezen.biz.dto.CartVO;
 import com.ezen.biz.dto.OrderVO;
+import com.ezen.biz.dto.SalesQuantity;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -82,6 +83,11 @@ public class OrderServiceImpl implements OrderService {
 	public void updateOrderResult(int odseq) {
 		
 		orderDao.updateOrderResult(odseq);
+	}
+
+	@Override
+	public List<SalesQuantity> getProductSales() {
+		return orderDao.getProductSales();
 	}
 
 }

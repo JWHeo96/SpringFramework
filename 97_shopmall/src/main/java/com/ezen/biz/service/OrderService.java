@@ -3,6 +3,7 @@ package com.ezen.biz.service;
 import java.util.List;
 
 import com.ezen.biz.dto.OrderVO;
+import com.ezen.biz.dto.SalesQuantity;
 
 public interface OrderService {
 
@@ -19,4 +20,7 @@ public interface OrderService {
 	List<OrderVO> getListOrder(String mname);
 		
 	void updateOrderResult(int odseq);
+	
+	// 상품 실적 조회
+	List<SalesQuantity> getProductSales();
 }
